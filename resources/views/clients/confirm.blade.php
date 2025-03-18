@@ -1,4 +1,4 @@
-@extends('templates.template')
+@extends('templates.templateclients')
 @section('body')
 <br>
 <div class="container">

@@ -8,7 +8,7 @@
 <p>Réception d'une prise de contact avec les éléments
 suivants :</p>
 <ul>
-<li><strong>Nom</strong> : {{ $champs['nom'] }}
+<li><strong>Nom</strong> : {{ $champs['name'] }}
 </li>
 <li><strong>Email</strong> : {{ $champs['email'] }}
 </li>

@@ -7,22 +7,22 @@ use Illuminate\Http\Request;
 class RouteController extends Controller
 {
     public function index(){
-        return view('index');
+        return view('clients.index');
     }
     public function about(){
-        return view('about');
+        return view('clients.about');
     }
     public function contact(){
-        return view('contact');
+        return view('clients.contact');
     }
     public function feature(){
-        return view('feature');
+        return view('clients.feature');
     }
     public function service(){
-        return view('service');
+        return view('clients.service');
     }
     public function confirm(){
-        return view('confirm');
+        return view('clients.confirm');
     }
 }
 // class RouteController extends Controller

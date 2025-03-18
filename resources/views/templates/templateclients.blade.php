@@ -47,7 +47,7 @@
             <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
               <ul class="navbar-nav  ">
                 <li class="nav-item active">
-                  <a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="index">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="about"> About Us</a>
@@ -61,6 +61,12 @@
 
                 <li class="nav-item">
                   <a class="nav-link" href="contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                <form action="{{ route('login') }}" method="POST">
+                    @csrf
+                    <button type="submit" class=" btn btn-danger btn-rounded">Déconnexion</button>
+                </form>
                 </li>
               </ul>
               <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">

@@ -1,4 +1,4 @@
-@extends("templates.template")
+@extends("templates.templateclients")
    
     @section("titre")
         contact
@@ -49,7 +49,7 @@
                   </div>
                   <div class="mt-5 d-flex justify-content-center ">
                     <button type="submit">
-                      Send
+                      ENVOYER
                     </button>
                   </div>
                 </div>
