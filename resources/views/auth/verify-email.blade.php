@@ -28,5 +28,5 @@
             </button>
         </form>
     </div>
-    
+
 </x-guest-layout>
