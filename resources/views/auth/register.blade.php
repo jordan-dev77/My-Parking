@@ -16,7 +16,7 @@
         <div class="col-12 col-md-9 col-lg-7 col-xl-6">
           <div class="card" style="border-radius: 15px;">
             <div class="card-body p-5">
-              <h2 class="text-uppercase text-center mb-5">Cree un compte</h2>
+              <h2 class="text-uppercase text-center mb-5">Creer un compte</h2>
 
               <form method="POST" action="{{ route('register') }}">
               @csrf
@@ -86,7 +86,7 @@
                     data-mdb-ripple-init class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
                 </div>
 
-                <p class="text-center text-muted mt-5 mb-0">aver vous deja un compte? <a href="{{ route('login') }}"
+                <p class="text-center text-muted mt-5 mb-0">avez vous deja un compte? <a href="{{ route('login') }}"
                     class="fw-bold text-body"><u>se connecter ici</u></a></p>
 
               </form>

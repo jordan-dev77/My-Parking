@@ -24,7 +24,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css " rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/stylevitrine.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 </head>
@@ -50,7 +50,7 @@
                 <li class="nav-item active">
                   <a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <!-- <li class="nav-item">
+                <li class="nav-item">
                   <a class="nav-link" href="about"> About Us</a>
                 </li>
                 <li class="nav-item">
@@ -58,33 +58,20 @@
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="service"> Services </a>
-                </li> -->
+                </li>
 
                 <li class="nav-item">
                   <a class="nav-link" href="contact">Contact</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="reservation">liste reservation</a>
+                    <div class="header-icon">
+                        <a class="nav-link" href="{{ route('login') }}">
+                              <i class="fa fa-user"></i>
+                               se conecter
+                         </a>
+                    </div>
+                
                 </li>
-                @auth
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown">
-                           <i class="fa fa-user"></i>
-                            {{ Auth::user()->name }}
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                            <li>
-                                <form action="{{ route('logout') }}" method="POST">
-                                    @csrf
-                                    <button type="submit" class="dropdown-item text-danger">Déconnexion</button>
-                                </form>
-                            </li>
-                        </ul>
-                    </li>
-                @endauth
-
-
-
               </ul>
               <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
                 <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
@@ -99,10 +86,10 @@
 
   <!-- info section -->
 
-  <section class="info_section mt-5 p5">
+  <section class="info_section ">
      <div class="container p-5 ">
       <div class="row">
-        <!--<div class="col-lg-4"> 
+        <!--<div class="col-lg-4">
           <h6>
             Subscribe Now
           </h6>
@@ -270,7 +257,8 @@
     </p>
   </section> -->
   <!-- footer section -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.js"></script>
   <script type="text/javascript" src="js/custom.js"></script>

@@ -1,4 +1,4 @@
-@extends("templates.templateclients")
+@extends("templates.templatevitrine")
 
 @section("titre")
    client
@@ -39,18 +39,18 @@
               <div class="detail-box">
                 <h1>
 
-                  LES MEILEURES <br>
-                  OFFRES POUR DES PARKING
+                  GEREZ FACILEMENT<br>
+                  VOS PARKING
                 </h1>
                 <!-- <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                   dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                 </p> -->
-                <div>
+                <!-- <div>
                   <a href="contact">
                     Contact us
                   </a>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
@@ -68,17 +68,31 @@
   </div>
 
   <!-- find section -->
-  <section class="find_section">
-       <form method="GET" action="{{ route('homeclient') }}">
+  <!-- <section class="find_section">
+             <form action="">
                 <div class="col-lg-10 ">
                       <label for="carPark">SELECTIONER UN PARKING</label>
                 </div>
                       <div class="container-fluid d-flex flex-row ">
                             
                                  <div class="col-lg-10">
-                                       <input class="form-control" type="text" name="query" placeholder="Entrez le nom ou le quatier du parking" value="{{ request('query') }}">
+                                     <select name="" id="carPark" class="form-control">
+                                            <option value="">First Floor</option>
+                                            <option value="">Option 1</option>
+                                            <option value="">Option 2</option>
+                                     </select>
                                   </div> 
-                               <div class="btn-container col-lg-2 align-self-end"> 
+          <div class="col-lg-3"> -->
+            <!-- <label for="parkingName">Your Name Here</label>
+            <input type="text" class="form-control" placeholder="jack frod " id="parkingName">
+          </div>
+
+          <div class="col-lg-3">
+            <label for="parkingNumber">Your Phone Number</label>
+            <input type="text" class="form-control" placeholder="+01 1234567890 " id="parkingNumber">
+          </div>
+          <div class="col-lg-3"> -->
+                               <!-- <div class="btn-container col-lg-2 align-self-end"> 
                                      <button type="submit" class="">
                                            recherche
                                      </button>
@@ -86,28 +100,12 @@
                            
                           </div>
                   </form>
-                  <div class="container border rounded-5">
-                         @if(isset($parkings))
-                 <ul>
-                      @foreach($parkings as $parking)
-                      <div class="list-group">
-                          <a href="{{ route('proprietaires.parking.show', $parking->id) }}" class="list-group-item list-group-item-action active" aria-current="true">
-                          <strong>{{ $parking->nom_parking}}</strong>
-                           </a>
-                      </div>
-                      @endforeach
-
-                         @elseif(request('query'))
-                         <p>Aucun parking trouvé.</p>
-                         @endif
-            </div>
-
-  </section>
+  </section> -->
 
   <!-- end find section -->
 
   <!-- feature section -->
-  <section class="feature_section layout_padding2">
+  <section class="feature_section layout_padding2 m-5 p-5">
     <div class="container">
       <div class="row">
         <div class="col-md-4">
@@ -162,7 +160,7 @@
   <!-- end feature section -->
 
   <!-- why section -->
-  <!-- <section class="why_section layout_padding">
+  <section class="why_section layout_padding">
     <div class="container">
       <div class="row">
         <div class="col-md-6">
@@ -227,11 +225,11 @@
     </div>
   </section>
 
-  end why section -->
+  <!-- end why section -->
 
   <!-- service section -->
 
-  <!-- <section class="service_section layout_padding-bottom">
+  <section class="service_section layout_padding-bottom">
     <div class="container">
       <div class="heading_container">
         <h2>
@@ -609,7 +607,7 @@
         </div>
       </div>
     </div>
-  </section> -->
+  </section>
 
   <!-- end service section -->
 

@@ -25,7 +25,7 @@ class ParkingRequest extends FormRequest
             'nom_parking'=>'bail|required|string|max:50',
             'adresse'=>'bail|required|string|max:50',
             'nombre_place'=>'bail|required|integer|min:2',
-            'solde'=>'bail|required|numeric'
+            'tarif'=>'bail|required|numeric'
         ];
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ParkingRequest;
 use Illuminate\Http\Request;
 use App\Models\Parking;
+use Illuminate\Support\Facades\Auth;
 
 class Parkingcontroller extends Controller
 {
@@ -13,7 +14,7 @@ class Parkingcontroller extends Controller
      */
     public function index()
     {
-        $Parkings = Parking::paginate(10);
+        $Parkings = Parking::where('user_id',Auth::id())->paginate(10);
         
         return view('proprietaires.Parkings', compact('Parkings'));
     }
@@ -29,34 +30,45 @@ class Parkingcontroller extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(ParkingRequest $ParkingRequest)
+    public function store(ParkingRequest $request)
     {
-        Parking::create($ParkingRequest->all());
-        return redirect()->route('proprietaires.parking.index')->with('infos', 'Le film a bien été créé');
+        $user = Auth::user();
+        Parking::create([
+            'nom_proprietaire'=> $user->name,
+            'nom_parking'=> $request-> nom_parking,
+            'adresse'=>$request->adresse,
+            'nombre_place'=> $request->nombre_place,
+            'tarif'=> $request->tarif,
+            'user_id'=> $user->id,
+            
+        ]);
+        return redirect()->route('proprietaires.parking.index')->with('infos', 'Le parking a bien été créé');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Parking $Parking)
     {
-        //
+        return view('proprietaires.VoirParking', compact('Parking'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Parking $Parking)
     {
-        //
+        return view('proprietaires.EditParking',compact('Parking'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(ParkingRequest $request, Parking $Parking)
     {
-        //
+        $Parking->update($request->all());
+       return redirect()->route('proprietaires.parking.index')->with('infos', 'Le parking a bien été modifié');
+
     }
 
     /**
@@ -65,6 +77,9 @@ class Parkingcontroller extends Controller
     public function destroy(Parking $Parking)
     {
         $Parking->delete();
-        return back()->with('info', 'Le Parking a bien été supprimé dans la base de données.');
+        return  redirect()->route('proprietaires.parking.index')->with('info', 'Le parking a bien été suprimer');
+
     }
+   
+
 }

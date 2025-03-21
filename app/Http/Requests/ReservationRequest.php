@@ -11,7 +11,7 @@ class ReservationRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,10 +23,10 @@ class ReservationRequest extends FormRequest
     {
         return [
             'immatriculation'=>'bail|required|string|between:10,15',
-            'marque'=>'bail|required|string|max:50',
-            'type vehicule'=>'bail|required|max:50',
-            'date arriver'=>'bail|required|date|before_or_equal:today',
-            'date depart'=>'bail|nullable|date|after:date_arriver'
+            'marque_vehicule'=>'string|max:50',
+            'type_vehicule'=>'bail|required|max:50',
+            'date_arriver'=>'bail|required|date|before_or_equal:today',
+            'date_depart'=>'bail|nullable|date|after:date_arriver'
 
         ];
     }

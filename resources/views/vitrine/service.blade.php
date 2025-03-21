@@ -1,4 +1,4 @@
-@extends("templates.templateclients")
+@extends("templates.templatevitrine")
        
 
 @section("titre")

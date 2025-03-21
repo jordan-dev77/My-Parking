@@ -3,11 +3,11 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ProprietaireController;
+use App\Http\Controllers\ClientReservationController;
+use App\Http\Controllers\ParkingController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+require __DIR__.'/vitrine.php';
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -19,16 +19,17 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 Route::middleware('auth')->group(function () {
-    Route::get('/homeclient', [ClientController::class, 'index'])->name('homeclient');
-    route::get('/about',[ClientController::class,'about'])->name("about");
+    Route::get('/homeclient', [ClientController::class, 'recherche'])->name('homeclient');
     Route::get('/contact',[ClientController::class,'contact'])->name("contact");
-    Route::get('/fonctionalite',[ClientController::class,'feature'])->name("fonctionalite");
-    Route::get('/service',[ClientController::class,'service'])->name("service");
-
+    Route::resource('/reservation', clientReservationController::class,["as"=>"clients"]);
+    
 });
 
 Route::middleware('auth')->group(function () {
     Route::get('/homeproprietaire', [ProprietaireController::class, 'index'])->name('homeproprietaire');
+    Route::resource('/parking', ParkingController::class,["as"=>"proprietaires"]);
+
 });
 
 require __DIR__.'/auth.php';
+require __DIR__.'/vitrine.php';

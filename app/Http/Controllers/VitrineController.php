@@ -4,25 +4,25 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class RouteController extends Controller
+class VitrineController extends Controller
 {
     public function index(){
-        return view('clients.index');
+        return view('vitrine.index');
     }
     public function about(){
-        return view('clients.about');
+        return view('vitrine.about');
     }
     public function contact(){
-        return view('clients.contact');
+        return view('vitrine.contact');
     }
     public function feature(){
-        return view('clients.feature');
+        return view('vitrine.feature');
     }
     public function service(){
-        return view('clients.service');
+        return view('vitrine.service');
     }
     public function confirm(){
-        return view('clients.confirm');
+        return view('vitrine.confirm');
     }
 }
 // class RouteController extends Controller

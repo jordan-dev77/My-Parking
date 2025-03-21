@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
+
 class AuthenticatedSessionController extends Controller
 {
     /**
@@ -28,12 +29,13 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        Auth::login($user);
+
+        $user=Auth::user();
 
         if($user->role==='client'){
             return redirect(route('homeclient'));
        }
-       elseif ($user->role==='proprietaire'){
+    /*    ($user->role==='proprietaire') */ else{
            return redirect(route('homeproprietaire'));
        }
     }

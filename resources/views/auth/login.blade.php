@@ -50,7 +50,7 @@
 	            <div class="form-group d-md-flex">
 	            	<div class="w-50">
 		            	<label class="checkbox-wrap checkbox-primary">Remember Me
-									  <input type="checkbox" checked  name="remember">>
+									  <input type="checkbox" checked  name="remember">
 									  <span class="checkmark"></span>
 									</label>
 								</div>
@@ -59,7 +59,11 @@
 									<a href="{{ route('password.request') }}" style="color: #fff">mot de passe oublier</a>
 									@endif
 								</div>
+								
 	            </div>
+				               <div>
+								<a href="{{ route('register') }}"class="fw-bold text-body" ><u>creer un compte  ici</u></a>
+							   </div>
 	          </form>
 		      </div>
 				</div>

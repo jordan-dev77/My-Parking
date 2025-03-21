@@ -3,22 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Parking;
 
 class ClientController extends Controller
 {
-    public function index(){
-        return view('clients.index');
+    public function recherche(Request $request,Parking $Parking)
+    {
+        
+        $Recherche = $request->input('query');
+
+        $parkings = [];
+
+        if ($Recherche) {
+            $parkings = Parking::where('nom_parking', 'LIKE', "%$Recherche%")
+                ->orWhere('adresse', 'LIKE', "%$Recherche%")
+                ->paginate(5);
         }
-        public function about(){
-            return view('clients.about');
-        }
+        return view('clients.index', compact('parkings', 'Recherche'));
+       }
+
         public function contact(){
             return view('clients.contact');
         }
-        public function feature(){
-            return view('clients.feature');
-        }
-        public function service(){
-            return view('clients.service');
-    }
 }

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.css')}}" />
 </head>
 <body>
   <div class="container border rounded-5 shadow-lg m-5 p-5 ">
@@ -13,7 +13,7 @@
            @endif
            
            @if(session()->has('bg-danger border rounded-5 text-white m-3 p-3'))
-                <div class="notification is-success">{{ session('infos') }}</div>
+                <div class=" success border rounded-5 text-white m-3 p-3"->{{ session('infos') }}</div>
             @endif
 
     <header class="card-header">
@@ -35,8 +35,8 @@
                 @foreach($Parkings as $Parking)
 <tr>
 <td><strong>{{ $Parking->nom_parking}}</strong></td>
-<td><strong>{{ $Parking->adresse_parking}}</strong></td>
-<td><strong>{{$Parking->nombre_de_place}}</strong></td>
+<td><strong>{{ $Parking->adresse}}</strong></td>
+<td><strong>{{$Parking->nombre_place}}</strong></td>
 <td><a class="btn btn-primary" href="{{ route('proprietaires.parking.show',$Parking->id)}}">Voir</a></td>
 <td><a class="btn btn-warning" href="{{ route('proprietaires.parking.edit',$Parking->id)}}">Modifier</a></td>
 

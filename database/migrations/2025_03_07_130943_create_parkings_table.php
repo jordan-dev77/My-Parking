@@ -15,8 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('nom_proprietaire');
             $table->string('nom_parking');
-            $table->string('adresse_parking');
-            $table->integer('nombre_de_place');
+            $table->string('adresse');
+            $table->integer('nombre_place');
+            $table->integer('tarif');
             $table->foreignId('user_id')
             ->constrained()
             ->onUpdate('cascade')

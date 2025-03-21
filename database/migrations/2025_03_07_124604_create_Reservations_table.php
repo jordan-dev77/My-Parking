@@ -15,7 +15,6 @@ return new class extends Migration
         Schema::create('Reservations', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
-            $table->string('place_occuper');
             $table->string('marque_vehicule');
             $table->string('immatriculation');
             $table->string('type_vehicule');
@@ -26,7 +25,7 @@ return new class extends Migration
             ->constrained()
             ->onUpdate('cascade')
             ->onDelete('cascade');
-            $table->foreignId('Parking_id')
+            $table->foreignId('parking_id')
             ->constrained()
             ->onUpdate('cascade')
             ->onDelete('cascade');

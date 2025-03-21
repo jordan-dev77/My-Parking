@@ -8,10 +8,12 @@ class Parking extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'nom parking',
+        'nom_parking',
         'adresse',
-        'nombre place',
+        'nombre_place',
         'tarif',
+        'user_id',
+        'nom_proprietaire'
     ];
     public function proprietaire()
     {
@@ -21,4 +23,5 @@ class Parking extends Model
     {
         return $this->hasMany(Reservation::class);
     }
+
 }
